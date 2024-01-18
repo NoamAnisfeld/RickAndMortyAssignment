@@ -1,9 +1,9 @@
 import './App.css'
-import Characters from './components/Characters'
+import Router from './routing/Router'
 
 function App() {
   return (<>
-    <Characters />
+    <Router />
   </>)
 }
 
