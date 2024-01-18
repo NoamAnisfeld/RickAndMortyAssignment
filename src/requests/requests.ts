@@ -1,5 +1,5 @@
 import axios from "axios"
-
+import { type Character, allCharactersSchema } from "./schemas"
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -14,9 +14,10 @@ const API_ENDPOINTS = Object.freeze({
 });
 
 
-export async function getCharacters() {
+export async function getCharacters(): Promise<Character[]> {
 
     const url = (new URL(API_ENDPOINTS.characters, API_URL)).href;
-
-    return axios.get(url);
+    const { data } = await axios.get(url);
+    const validatedData = allCharactersSchema.parse(data);
+    return validatedData.results;
 }

@@ -1,21 +1,33 @@
 import { useEffect, useState } from 'react'
 import { getCharacters } from '../requests/requests'
+import type { Character } from '../requests/schemas'
+import CharacterCard from './CharacterCard'
+import './Characters.css'
 
 
 export default function Characters() {
 
-    const [data, setData] = useState();
+    const [characters, setCharacters] = useState<Character[]>();
 
     useEffect(() => {
         (async () => {
-            const response = await getCharacters();
-            if (response.data) {
-                setData(response.data);
-            }
+            setCharacters(await getCharacters());
         })()
     })
 
-    return (
-        <pre style={{ textAlign: 'start' }}>{JSON.stringify(data, undefined, 4) || 'loading...'}</pre>
-    )
+    if (!characters) {
+        return <>loading...</>
+    }
+
+    return (<>
+        <h1>Characters</h1>
+        <div className="characters">
+            {characters.map(character =>
+                <CharacterCard
+                    key={character.id}
+                    {...character}
+                />
+            )}
+        </div>
+    </>)
 }
