@@ -1,10 +1,10 @@
 import './App.css'
+import Characters from './components/Characters'
 
 function App() {
-
-  return (
-    <>content</>
-  )
+  return (<>
+    <Characters />
+  </>)
 }
 
 export default App
