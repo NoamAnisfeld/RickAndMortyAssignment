@@ -3,15 +3,27 @@ import {
     createRoutesFromElements,
     RouterProvider,
     Route,
+    useParams,
 } from "react-router-dom";
 import MainPage from "../components/MainPage"
 import AllCharactersPage from "../components/AllCharactersPage"
+import CharacterPage from "../components/CharacterPage";
+
+
+function CharacterRouter() {
+    const { characterId } = useParams();
+    return <CharacterPage characterId={Number(characterId)} />
+}
+
 
 const router = createRouter(
     createRoutesFromElements(
         <Route path="/">
             <Route index element={<MainPage />} />
-            <Route path="characters" element={<AllCharactersPage />} />
+            <Route path="characters">
+                <Route index element={<AllCharactersPage />} />
+                <Route path=":characterId" element={<CharacterRouter />} />
+            </Route>
         </Route>
     )
 );

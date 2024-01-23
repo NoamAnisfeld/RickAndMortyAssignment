@@ -1,0 +1,29 @@
+.character-image {
+  width: 100%;
+}
+
+.character-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.character-info-table th {
+  text-align: start;
+}
+
+.character-info-table th,
+.character-info-table td {
+  padding: 1em;
+}
+
+.character-info-table tr:nth-of-type(even) {
+  background-color: #CCC;
+}
+
+@media screen and (min-width: 900px) {
+  .character-page-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2ch;
+  }
+}
