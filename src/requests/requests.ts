@@ -50,12 +50,19 @@ export async function getEpisodeInfo(EpisodeId: number): Promise<Episode> {
 }
 
 
-export async function getCharacters(): Promise<Character[]> {
+export async function getAllCharacters(): Promise<Character[]> {
 
-    const url = (new URL(API_ENDPOINTS.characters, API_URL)).href;
-    const { data } = await axios.get(url);
-    const validatedData = allCharactersSchema.parse(data);
-    return validatedData.results;
+    let results: Character[] = [];
+    let url: string | null = (new URL(API_ENDPOINTS.characters, API_URL)).href;
+
+    while (url) {
+        const { data } = await axios.get(url);
+        const validatedData = allCharactersSchema.parse(data);
+        results = results.concat(validatedData.results);
+        url = validatedData.info.next;
+    }
+
+    return results;
 }
 
 

@@ -24,6 +24,9 @@ export const characterSchema = z.object({
 export type Character = z.infer<typeof characterSchema>
 
 export const allCharactersSchema = z.object({
+    info: z.object({
+        next: z.string().url().nullable(),
+    }),
     results: z.array(characterSchema),
 })
 export type AllCharacters = z.infer<typeof allCharactersSchema>

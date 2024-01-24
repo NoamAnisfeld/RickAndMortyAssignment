@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getCharacters } from '../../requests/requests'
+import { getAllCharacters } from '../../requests/requests'
 import type { Character } from '../../requests/schemas'
 import CharacterGallery from './CharacterGallery'
 
@@ -10,7 +10,7 @@ export default function AllCharactersPage() {
 
     useEffect(() => {
         (async () => {
-            setCharacters(await getCharacters());
+            setCharacters(await getAllCharacters());
         })()
     }, []);
 
