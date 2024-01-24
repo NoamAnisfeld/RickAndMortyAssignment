@@ -13,6 +13,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg');
+  background-position: center top;
+  background-size: 90% auto;
+  background-repeat: repeat-y;
+}
+
+@media screen and (orientation: landscape) {
+  :root::before {
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,6 +47,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: inherit;
+  opacity: 90%;
 }
 
 h1 {
