@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import type { Episode } from "../../requests/schemas"
 import { getEpisodeInfo } from "../../requests/requests"
-import CharacterGalleryLoader from "../characters/CharacterGalleryLoader";
+import CharacterGallery from "../characters/CharacterGallery";
 
 
 interface EpisodePageProps {
@@ -32,7 +32,7 @@ export default function EpisodePage({
             <h1>Episode {episodeInfo.id}: {episodeInfo.name}</h1>
             <p className="secondary-header">aired at {episodeInfo.air_date}</p>
             <h2>Characters participating:</h2>
-            <CharacterGalleryLoader characterIds={characterIds} />
+            <CharacterGallery characterIds={characterIds} />
         </div>
     </div>);
 }
