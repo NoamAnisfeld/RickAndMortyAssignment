@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import type { Episode } from "../../requests/schemas"
 import { getEpisodeInfo } from "../../requests/requests"
 import './EpisodePage.css'
+import CharacterGalleryLoader from "../characters/CharacterGalleryLoader";
 
 
 interface EpisodePageProps {
@@ -22,10 +23,17 @@ export default function EpisodePage({
         return 'loading...';
     }
 
+    const characterIds = episodeInfo.characters.map(
+        characterUrl =>
+            Number(characterUrl.replace(/.*\//, ''))
+    );
+
     return (<div className="episode-page-container">
         <div>
-            <h1>{episodeInfo.name}</h1>
+            <h1>Episode {episodeInfo.id}: {episodeInfo.name}</h1>
             <p className="secondary-header">aired at {episodeInfo.air_date}</p>
+            <h2>Characters participating:</h2>
+            <CharacterGalleryLoader characterIds={characterIds} />
         </div>
     </div>);
 }

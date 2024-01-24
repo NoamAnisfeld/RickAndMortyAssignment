@@ -42,12 +42,29 @@ export async function getEpisodeInfo(EpisodeId: number): Promise<Episode> {
     return validatedData;
 }
 
+
 export async function getCharacters(): Promise<Character[]> {
 
     const url = (new URL(API_ENDPOINTS.characters, API_URL)).href;
     const { data } = await axios.get(url);
     const validatedData = allCharactersSchema.parse(data);
     return validatedData.results;
+}
+
+
+export async function getMultipleCharacters(characterIds: number[]): Promise<Character[]> {
+
+    if (!characterIds.length) {
+        return [];
+    }
+
+    const url = (new URL(
+        characterIds.join(','),
+        new URL(API_ENDPOINTS.characters, API_URL) + '/'
+    )).href;
+    const { data } = await axios.get(url);
+    const validatedData = characterSchema.array().parse(data);
+    return validatedData;
 }
 
 

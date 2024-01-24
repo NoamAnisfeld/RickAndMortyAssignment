@@ -10,7 +10,7 @@ export default function CharacterCard({
 }: Character) {
 
     return (
-        <Link to={String(id)}>
+        <Link to={`/characters/${id}`}>
             <div
                 className="character-card"
                 style={{ '--image': `url(${image})` } as React.CSSProperties}
