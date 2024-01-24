@@ -1,13 +1,7 @@
-import { Link } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 
 
 export default function MainPage() {
 
-    return (
-        <>
-            <Link to="episodes">Episodes</Link>
-            {' '}
-            <Link to="characters">Characters</Link>
-        </>
-    );
+    return <Navigate to="episodes" />
 }
