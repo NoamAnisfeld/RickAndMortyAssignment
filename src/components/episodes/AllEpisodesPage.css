@@ -1,0 +1,10 @@
+.all-episodes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.season-container {
+    width: 40ch;
+    padding: 0.5em 1em;
+}

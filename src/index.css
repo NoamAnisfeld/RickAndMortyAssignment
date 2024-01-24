@@ -34,10 +34,9 @@
 
 a {
   font-weight: 500;
-  color: unset;
   text-decoration: inherit;
 }
-a:hover {
+a:not(.text-link) {
   color: unset;
 }
 
