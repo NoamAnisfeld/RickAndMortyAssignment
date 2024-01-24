@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getCharacters } from '../requests/requests'
-import type { Character } from '../requests/schemas'
+import { getCharacters } from '../../requests/requests'
+import type { Character } from '../../requests/schemas'
 import CharacterCard from './CharacterCard'
 import './AllCharactersPage.css'
 

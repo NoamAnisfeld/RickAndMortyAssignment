@@ -6,8 +6,8 @@ import {
     useParams,
 } from "react-router-dom";
 import MainPage from "../components/MainPage"
-import AllCharactersPage from "../components/AllCharactersPage"
-import CharacterPage from "../components/CharacterPage";
+import AllCharactersPage from "../components/characters/AllCharactersPage"
+import CharacterPage from "../components/characters/CharacterPage";
 
 
 function CharacterRouter() {

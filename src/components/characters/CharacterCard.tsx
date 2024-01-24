@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import type { Character } from "../requests/schemas"
+import type { Character } from "../../requests/schemas"
 import './CharacterCard.css'
 
 

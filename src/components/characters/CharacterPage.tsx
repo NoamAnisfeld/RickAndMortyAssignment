@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import type { Character } from "../requests/schemas"
-import { getCharacterInfo } from "../requests/requests"
-import InfoTableRow from "./InfoTableRow"
+import type { Character } from "../../requests/schemas"
+import { getCharacterInfo } from "../../requests/requests"
+import InfoTableRow from "../InfoTableRow"
 import './CharacterPage.css'
 
 
