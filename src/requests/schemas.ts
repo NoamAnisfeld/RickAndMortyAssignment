@@ -41,6 +41,9 @@ export const episodeSchema = z.object({
 export type Episode = z.infer<typeof episodeSchema>
 
 export const allEpisodesSchema = z.object({
+    info: z.object({
+        next: z.string().url().nullable(),
+    }),
     results: z.array(episodeSchema),
 })
 export type AllEpisodes = z.infer<typeof allEpisodesSchema>

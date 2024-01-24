@@ -21,12 +21,19 @@ const API_ENDPOINTS = Object.freeze({
 });
 
 
-export async function getEpisodes(): Promise<Episode[]> {
+export async function getAllEpisodes(): Promise<Episode[]> {
 
-    const url = (new URL(API_ENDPOINTS.episodes, API_URL)).href;
-    const { data } = await axios.get(url);
-    const validatedData = allEpisodesSchema.parse(data);
-    return validatedData.results;
+    let results: Episode[] = [];
+    let url: string | null = (new URL(API_ENDPOINTS.episodes, API_URL)).href;
+
+    while (url) {
+        const { data } = await axios.get(url);
+        const validatedData = allEpisodesSchema.parse(data);
+        results = results.concat(validatedData.results);
+        url = validatedData.info.next;
+    }
+
+    return results;
 }
 
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getEpisodes } from '../../requests/requests'
+import { getAllEpisodes } from '../../requests/requests'
 import type { Episode } from '../../requests/schemas'
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ export default function AllEpisodesPage() {
 
     useEffect(() => {
         (async () => {
-            setEpisodes(await getEpisodes());
+            setEpisodes(await getAllEpisodes());
         })()
     }, [])
 
