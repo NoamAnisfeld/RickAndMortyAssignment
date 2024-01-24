@@ -25,24 +25,25 @@ export default function CharacterPage({
 
     return (<div className="character-page-container">
         <img className="character-image" src={characterInfo.image} alt={characterInfo.name} />
-        <table className="character-info-table">
-            <tbody>
-                {
-                    ([
-                        'name',
-                        'status',
-                        'species',
-                        'type',
-                        'gender',
-                    ] as const).map(field => (
-                        <InfoTableRow
-                            key={field}
-                            field={field}
-                            dataObject={characterInfo}
-                        />
-                    ))
-                }
-            </tbody>
-        </table>
-    </div>);
+        <div>
+            <h1>{characterInfo.name}</h1>
+            <table className="character-info-table">
+                <tbody>
+                    {
+                        ([
+                            'status',
+                            'species',
+                            'type',
+                            'gender',
+                        ] as const).map(field => (
+                            <InfoTableRow
+                                key={field}
+                                field={field}
+                                dataObject={characterInfo}
+                            />
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>   </div>);
 }

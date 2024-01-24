@@ -1,5 +1,21 @@
+.character-page-container h1 {
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .character-page-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2ch;
+    align-items: center;
+  }
+}
+
 .character-image {
-  width: 100%;
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: auto;
 }
 
 .character-info-table {
@@ -18,12 +34,4 @@
 
 .character-info-table tr:nth-of-type(even) {
   background-color: #CCC;
-}
-
-@media screen and (min-width: 900px) {
-  .character-page-container {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 2ch;
-  }
 }
