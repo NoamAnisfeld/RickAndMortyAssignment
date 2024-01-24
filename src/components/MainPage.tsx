@@ -1,7 +1,11 @@
-import { Navigate } from "react-router-dom"
+import NavBar from "./NavBar"
+import { Outlet } from "react-router-dom"
 
 
 export default function MainPage() {
 
-    return <Navigate to="episodes" />
+    return (<>
+        <NavBar />
+        <Outlet />
+    </>)
 }

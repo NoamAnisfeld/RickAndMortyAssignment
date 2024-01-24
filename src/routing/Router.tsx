@@ -3,6 +3,7 @@ import {
     createRoutesFromElements,
     RouterProvider,
     Route,
+    Navigate,
     useParams,
 } from "react-router-dom";
 import MainPage from "../components/MainPage"
@@ -25,8 +26,8 @@ function CharacterRouter() {
 
 const router = createRouter(
     createRoutesFromElements(
-        <Route path="/">
-            <Route index element={<MainPage />} />
+        <Route path="/" element={<MainPage />}>
+            <Route index element={<Navigate to="episodes" />} />
             <Route path="episodes">
                 <Route index element={<AllEpisodesPage />} />
                 <Route path=":episodeId" element={<EpisodeRouter />} />
