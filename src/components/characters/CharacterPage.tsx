@@ -17,7 +17,7 @@ export default function CharacterPage({
 
     useEffect(() => {
         getCharacterInfo(characterId).then(setCharacterInfo);
-    })
+    }, [characterId]);
 
     if (!characterInfo) {
         return 'loading...';

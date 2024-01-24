@@ -13,7 +13,7 @@ export default function AllCharactersPage() {
         (async () => {
             setCharacters(await getCharacters());
         })()
-    })
+    }, []);
 
     if (!characters) {
         return <>loading...</>
