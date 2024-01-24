@@ -48,7 +48,11 @@ export default function AllEpisodesPage() {
                     <ol className="episode-list">
                         {episodeList.map(episode =>
                             <li key={episode.name}>
-                                <Link to={`/episodes/${episode.id}`} className="text-link">{episode.name}</Link>
+                                <Link to={`/episodes/${episode.id}`} className="text-link">
+                                    {episode.name}
+                                </Link>
+                                {" "}
+                                (aired {episode.air_date})
                             </li>
                         )}
                     </ol>
