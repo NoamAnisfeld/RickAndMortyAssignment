@@ -1,0 +1,9 @@
+.episode-page-container h1 {
+  margin: 0;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.episode-page-container .secondary-header {
+  text-align: center;
+}
