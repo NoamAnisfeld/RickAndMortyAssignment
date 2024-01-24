@@ -6,8 +6,8 @@ export default function NavBar() {
 
     return (
         <header className="navbar">
-            <NavLink to="/episodes">Episodes</NavLink>
-            <NavLink to="/characters">Characters</NavLink>
+            <NavLink to="/episodes" end>Episodes</NavLink>
+            <NavLink to="/characters" end>Characters</NavLink>
         </header>
     );
 }
