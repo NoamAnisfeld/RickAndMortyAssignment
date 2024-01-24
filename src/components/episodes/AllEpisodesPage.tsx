@@ -19,7 +19,7 @@ export default function AllEpisodesPage() {
     }
 
     return (<>
-        <h1>Episodes</h1>
+        <h1>All Rick and Morty Episodes</h1>
         <ol className="episodes">
             {episodes.map(episode =>
                 <li>

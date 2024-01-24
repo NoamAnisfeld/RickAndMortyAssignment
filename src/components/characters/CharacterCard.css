@@ -7,6 +7,13 @@
     background-repeat: no-repeat;
     display: grid;
     place-items: end center;
+    box-shadow: -5px 5px 10px #888;
+    transition: 200ms;
+}
+
+.character-card:hover:not(:active) {
+    transform: translate(5px, -5px);
+    box-shadow: -15px 15px 10px #888;
 }
 
 .character-card > .character-title {
@@ -14,4 +21,5 @@
     font-size: 150%;
     font-weight: bold;
     background-color: #FFF9;
+    text-align: center;
 }

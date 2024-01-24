@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import type { Episode } from "../../requests/schemas"
 import { getEpisodeInfo } from "../../requests/requests"
-import './EpisodePage.css'
 import CharacterGalleryLoader from "../characters/CharacterGalleryLoader";
 
 

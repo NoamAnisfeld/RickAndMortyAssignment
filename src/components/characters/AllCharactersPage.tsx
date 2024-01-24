@@ -19,7 +19,7 @@ export default function AllCharactersPage() {
     }
 
     return (<>
-        <h1>Characters</h1>
+        <h1>All Rick and Morty Characters</h1>
         <CharacterGallery characters={characters} />
     </>)
 }

@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+h1,
+.secondary-header {
+  text-align: center;
+  text-wrap: balance;
+}
