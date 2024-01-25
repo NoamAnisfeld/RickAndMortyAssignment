@@ -8,7 +8,8 @@ import {
     allCharactersSchema,
 } from "./schemas"
 
-const API_URL = import.meta.env.VITE_API_URL
+
+const API_URL = 'https://rickandmortyapi.com/api/';
 
 if (!API_URL || typeof API_URL !== 'string') {
     throw Error('API URL is missing');
