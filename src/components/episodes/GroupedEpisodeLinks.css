@@ -1,7 +1,6 @@
 .grouped-episodes-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .season-container {
