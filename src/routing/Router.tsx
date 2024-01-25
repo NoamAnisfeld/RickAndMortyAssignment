@@ -3,10 +3,10 @@ import {
     createRoutesFromElements,
     RouterProvider,
     Route,
-    Navigate,
     useParams,
 } from "react-router-dom";
 import MainPage from "../components/MainPage"
+import WelcomeMessage from "../components/WelcomeMessage";
 import AllEpisodesPage from "../components/episodes/AllEpisodesPage"
 import AllCharactersPage from "../components/characters/AllCharactersPage"
 import EpisodePage from "../components/episodes/EpisodePage"
@@ -28,7 +28,7 @@ function CharacterRouter() {
 const router = createRouter(
     createRoutesFromElements(
         <Route path="/" element={<MainPage />}>
-            <Route index element={<Navigate to="episodes" />} />
+            <Route index element={<WelcomeMessage />} />
             <Route path="episodes">
                 <Route index element={<AllEpisodesPage />} />
                 <Route path=":episodeId" element={<EpisodeRouter />} />
