@@ -4,7 +4,6 @@ import { useAppSelector, useAppDispatch } from "../../global-state/store"
 import { toggleFavoriteCharacter } from "../../global-state/favoriteCharacters"
 import MarkFavoriteButton from "../MarkFavoriteButton"
 import './CharacterCard.css'
-import { useDispatch } from "react-redux"
 
 
 export default function CharacterCard({
@@ -14,7 +13,7 @@ export default function CharacterCard({
 }: Character) {
 
     const isFavorite = useAppSelector(state => state.favoriteCharacters).includes(id);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     return (
         <Link to={`/characters/${id}`}>
