@@ -72,6 +72,10 @@ export async function getMultipleCharacters(characterIds: number[]): Promise<Cha
         return [];
     }
 
+    if (characterIds.length === 1) {
+        return [await getCharacterInfo(characterIds[0])];
+    }
+
     const url = (new URL(
         characterIds.join(','),
         new URL(API_ENDPOINTS.characters, API_URL) + '/'
