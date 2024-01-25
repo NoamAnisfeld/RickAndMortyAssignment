@@ -1,4 +1,5 @@
 .character-card {
+    position: relative;
     width: 200px;
     height: 200px;
     border: 1px solid;
@@ -11,7 +12,8 @@
     transition: 200ms;
 }
 
-.character-card:hover:not(:active) {
+.character-card:hover:not(:active),
+.character-card:hover:has(:active) {
     transform: translate(5px, -5px);
     box-shadow: -15px 15px 10px #888;
 }
@@ -22,4 +24,10 @@
     font-weight: bold;
     background-color: #FFF9;
     text-align: center;
+}
+
+.character-card .favorite-button-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
