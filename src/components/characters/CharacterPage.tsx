@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import type { Character, Episode } from "../../requests/schemas"
 import { getCharacterInfo, getMultipleEpisodes } from "../../requests/requests"
 import InfoTableRow from "../InfoTableRow"
-import './CharacterPage.css'
+import { Link } from "react-router-dom"
 import GroupedEpisodeLinks from "../episodes/GroupedEpisodeLinks"
+import './CharacterPage.css'
 
 
 interface CharacterPageProps {
@@ -54,6 +55,21 @@ export default function CharacterPage({
                                 />
                             ))
                         }
+                        <tr key="location">
+                            <th>Last known location</th>
+                            <td>{characterInfo.location.name}</td>
+                        </tr>
+                        <tr key="first-appearance">
+                            <th>First appearance</th>
+                            <td>
+                                {episodes
+                                    ? <Link to={`/episodes/${episodes[0].id}`} className="text-link">
+                                        Episode {episodes[0].id}: {episodes[0].name}
+                                    </Link>
+                                    : ''
+                                }
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
