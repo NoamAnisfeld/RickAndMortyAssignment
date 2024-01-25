@@ -8,6 +8,7 @@ export default function NavBar() {
         <header className="navbar">
             <NavLink to="/episodes" end>Episodes</NavLink>
             <NavLink to="/characters" end>Characters</NavLink>
+            <NavLink to="/favorites">Favorites</NavLink>
         </header>
     );
 }

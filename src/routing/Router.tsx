@@ -11,6 +11,7 @@ import AllEpisodesPage from "../components/episodes/AllEpisodesPage"
 import AllCharactersPage from "../components/characters/AllCharactersPage"
 import EpisodePage from "../components/episodes/EpisodePage"
 import CharacterPage from "../components/characters/CharacterPage"
+import FavoritesPage from "../components/FavoritesPage";
 
 
 function EpisodeRouter() {
@@ -36,6 +37,7 @@ const router = createRouter(
                 <Route index element={<AllCharactersPage />} />
                 <Route path=":characterId" element={<CharacterRouter />} />
             </Route>
+            <Route path="favorites" element={<FavoritesPage />} />
         </Route>
     )
 );
