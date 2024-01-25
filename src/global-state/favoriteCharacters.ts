@@ -1,7 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { retrieveState, persistState } from './persistence'
 
 
-const initialState: number[] = [];
+const storedState = retrieveState().favoriteCharacters;
+const initialState: number[] = Array.isArray(storedState) ? storedState : [];
 
 export const favoriteCharactersSlice = createSlice({
 
@@ -12,6 +14,7 @@ export const favoriteCharactersSlice = createSlice({
             if (!state.includes(payload)) {
                 state.push(payload);
             }
+            persistState({ favoriteCharacters: state });
         },
 
         removefavoriteCharacter: (state, { payload }: PayloadAction<number>) => {
@@ -20,6 +23,7 @@ export const favoriteCharactersSlice = createSlice({
             if (index !== -1) {
                 state.splice(index, 1);
             }
+            persistState({ favoriteCharacters: state });
         },
 
         toggleFavoriteCharacter: (state, { payload }: PayloadAction<number>) => {
@@ -30,6 +34,7 @@ export const favoriteCharactersSlice = createSlice({
             } else {
                 state.splice(index, 1);
             }
+            persistState({ favoriteCharacters: state });
         },
     },
 })
