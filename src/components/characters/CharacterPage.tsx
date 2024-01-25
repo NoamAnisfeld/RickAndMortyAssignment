@@ -36,7 +36,7 @@ export default function CharacterPage({
     return (<>
         <div className="character-page-container">
             <img className="character-image" src={characterInfo.image} alt={characterInfo.name} />
-            <div>
+            <div className="character-info">
                 <h1>{characterInfo.name}</h1>
                 <table className="character-info-table">
                     <tbody>

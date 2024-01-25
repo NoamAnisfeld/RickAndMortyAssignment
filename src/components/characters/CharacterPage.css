@@ -9,6 +9,10 @@
   margin: auto;
 }
 
+.character-info {
+  width: 300px;
+}
+
 @media screen and (min-width: 600px) {
   .character-page-container {
     display: flex;
