@@ -1,4 +1,4 @@
-.all-episodes-container {
+.grouped-episodes-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

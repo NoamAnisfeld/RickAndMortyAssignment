@@ -37,6 +37,26 @@ export async function getAllEpisodes(): Promise<Episode[]> {
 }
 
 
+export async function getMultipleEpisodes(episodeIds: number[]): Promise<Episode[]> {
+
+    if (!episodeIds.length) {
+        return [];
+    }
+
+    if (episodeIds.length === 1) {
+        return [await getEpisodeInfo(episodeIds[0])];
+    }
+
+    const url = (new URL(
+        episodeIds.join(','),
+        new URL(API_ENDPOINTS.episodes, API_URL) + '/'
+    )).href;
+    const { data } = await axios.get(url);
+    const validatedData = episodeSchema.array().parse(data);
+    return validatedData;
+}
+
+
 export async function getEpisodeInfo(EpisodeId: number): Promise<Episode> {
 
     const url = (new URL(
