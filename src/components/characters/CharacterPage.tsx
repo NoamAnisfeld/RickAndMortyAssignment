@@ -35,10 +35,10 @@ export default function CharacterPage({
     }
 
     return (<>
-        <div className="character-page-container">
+        <h1>{characterInfo.name}</h1>
+        <div className="character-info-container">
             <img className="character-image" src={characterInfo.image} alt={characterInfo.name} />
             <div className="character-info">
-                <h1>{characterInfo.name}</h1>
                 <table className="character-info-table">
                     <tbody>
                         {

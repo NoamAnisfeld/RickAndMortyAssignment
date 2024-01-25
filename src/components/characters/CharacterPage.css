@@ -1,4 +1,4 @@
-.character-page-container h1 {
+.character-info-container h1 {
   margin: 0;
 }
 
@@ -14,11 +14,10 @@
 }
 
 @media screen and (min-width: 600px) {
-  .character-page-container {
+  .character-info-container {
     display: flex;
     flex-direction: row-reverse;
     gap: 2ch;
-    align-items: center;
     justify-content: center;
   }
 
